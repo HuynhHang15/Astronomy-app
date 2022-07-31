@@ -5,7 +5,10 @@
   --primary-color: #5367F8;
   --white-color: #eaebf4;
   --black-color: #333;
+  --gray-color: #565656;
+  --white-dark-color: #9aa2b0;
   --background-color: #0e0f15;
+  --background-color2: #1f1f1f;
 }
 
 * {
@@ -30,6 +33,12 @@ body{
   margin: 0 auto;
   padding: 0 20px;
   position: relative;
+}
+
+button, input, [tabindex]{
+  font-family: "Poppins", sans-serif;
+  outline: none;
+  border: none;
 }
 
 a{

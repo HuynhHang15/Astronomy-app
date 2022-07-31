@@ -1,0 +1,29 @@
+.hero{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+.video{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+.content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    h1{
+        font-size: 50px;
+        text-transform: uppercase;
+    }
+    h2{
+        font-size: 20px;
+        font-weight: 400;
+        letter-spacing: 5px;
+        margin-bottom: 20px;
+    }
+}
