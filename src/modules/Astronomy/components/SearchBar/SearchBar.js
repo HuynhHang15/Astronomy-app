@@ -1,6 +1,7 @@
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames/bind";
+import { useState } from "react";
 import Dropdown from "../Dropdown";
 import style from "./SearchBar.module.scss";
 
@@ -9,15 +10,17 @@ const cx = classNames.bind(style);
 const options = [
   {
     title: "Images",
-    data: "images",
+    data: "image",
   },
   {
     title: "Videos",
-    data: "videos",
+    data: "video",
   },
 ];
 
 function Search() {
+  const [selected, setSelected] = useState(options[0]);
+
   return (
     <div className={cx("search")}>
       <form className={cx("form-search")}>
@@ -30,7 +33,7 @@ function Search() {
       </form>
 
       <div className={cx("menu")}>
-        <Dropdown options={options} />
+        <Dropdown options={options} selected={selected} setSelected={setSelected}/>
       </div>
     </div>
   );
