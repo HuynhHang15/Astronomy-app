@@ -5,7 +5,7 @@ import apiConfig from "./apiConfig";
 const httpRequest = axios.create({
   baseURL: apiConfig.baseUrl,
   headers: {
-    "content-type": "application/json",
+    'Content-Type': 'application/json',
   },
   paramsSerializer: (params) =>
     queryString.stringify({

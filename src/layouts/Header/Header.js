@@ -24,16 +24,18 @@ const headerNav = [
 function Header() {
   return (
     <div className={cx("header")}>
-      <div className={cx("header-logo")}>
-        <img src={logoImg} alt="logo" />
+      <div className={cx("container")}>
+        <div className={cx("header-logo")}>
+          <img src={logoImg} alt="logo" />
+        </div>
+        <ul className={cx("header-nav")}>
+          {headerNav.map((e, i) => (
+            <Link to={e.path} key={i}>
+              <li className={cx("header-nav_item")}>{e.display}</li>
+            </Link>
+          ))}
+        </ul>
       </div>
-      <ul className={cx("header-nav")}>
-        {headerNav.map((e, i) => (
-          <Link to={e.path} key={i}>
-            <li className={cx("header-nav_item")}>{e.display}</li>
-          </Link>
-        ))}
-      </ul>
     </div>
   );
 }

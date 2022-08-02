@@ -30,8 +30,8 @@ function Search() {
         media_type: selected.data,
         q: "moon",
       };
-      const response = await search({params})
-      console.log(response)
+      const response = await search({ params });
+      // console.log(response.data.collection.items);
     };
     fetch();
   }, []);

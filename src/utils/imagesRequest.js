@@ -5,7 +5,7 @@ import apiConfig from "./apiConfig";
 const imagesRequest = axios.create({
   baseURL: apiConfig.imagesUrl,
   headers: {
-    "content-type": "application/json",
+    'Content-Type': 'application/json',
   },
   paramsSerializer: (params) =>
     queryString.stringify({
