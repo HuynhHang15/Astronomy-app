@@ -10,7 +10,6 @@
     position: relative;
     max-width: 1110px;
     margin: 0 auto;
-    padding: 10px 0;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -19,6 +18,9 @@
 .header-logo{
     width: 60px;
     height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .header-nav{
@@ -29,6 +31,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0 20px;
+    gap: 0 30px;
     font-size: 18px;
 }
