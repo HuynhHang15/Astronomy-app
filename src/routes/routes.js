@@ -8,8 +8,7 @@ const publicRoutes = [
   { path: "/", component: Home },
   { path: "/search/:search", component: Search },
   { path: "/:gallery", component: Gallery },
-  {path: "/contents/:gallery/:id", component: Detail}
-  
+  { path: "/contents/:gallery/:id", component: Detail },
 ];
 
 export { publicRoutes };

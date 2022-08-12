@@ -1,0 +1,33 @@
+.detail{
+    padding-top: 100px;
+    
+}
+.image{
+    display: flex;
+    justify-content: center;
+    & img{
+        max-width: 600px;
+    }
+}
+h2{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+h3{
+    margin-top: 20px;
+}
+.date{
+    text-align: center;
+    margin-bottom: 20px;
+}
+video{
+    width: 500px;
+}
+.keyword{
+    background: var(--gray-color);
+    padding: 3px;
+    margin-right: 10px;
+    border-radius: 5px;
+}

@@ -33,7 +33,6 @@ function AstroList({ gallery }) {
         throw new Error("invalid Type");
     }
     setlistItem(response.data.collection.items);
-    console.log(response.data.collection.items);
   };
 
   useEffect(() => {
@@ -43,10 +42,9 @@ function AstroList({ gallery }) {
     <div>
       <div className={cx("astro-list")}>
         {listItem.map((item, i) => (
-          <AstroItem key={i} item={item} />
+          <AstroItem key={i} item={item} gallery={gallery}/>
         ))}
       </div>
-      ;
     </div>
   );
 }
