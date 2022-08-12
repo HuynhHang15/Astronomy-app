@@ -64,14 +64,18 @@ function Detail() {
                   {item.data[0].description}
                 </div>
               </div>
-              <div className="credit">
-                <h3>Credit</h3>
-                <div>{item.data[0].secondary_creator}</div>
-              </div>
-              <div className={cx('keywords')}>
+              {item.data[0].secondary_creator && (
+                <div className="credit">
+                  <h3>Credit</h3>
+                  <div>{item.data[0].secondary_creator}</div>
+                </div>
+              )}
+              <div className={cx("keywords")}>
                 <h3>Keywords</h3>
                 {item.data[0].keywords.map((item, i) => (
-                  <span className={cx('keyword')} key={i}>{item}</span>
+                  <span className={cx("keyword")} key={i}>
+                    {item}
+                  </span>
                 ))}
               </div>
             </div>
