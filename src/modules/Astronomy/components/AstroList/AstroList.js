@@ -5,46 +5,61 @@ import { useEffect, useState } from "react";
 
 import AstroItem from "../AstroItem";
 import * as searchService from "~/service/searchService";
+import Pagination from "~/components/Pagination";
 
 const cx = classNames.bind(style);
 
-function AstroList({ gallery }) {
+function AstroList({ gallery, search }) {
   const [listItem, setlistItem] = useState([]);
+
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1000);
 
   const fetchList = async () => {
     let params = {};
     let response = null;
-    switch (gallery) {
-      case "images":
-        params = {
-          media_type: "image",
-          page: 1,
-        };
-        response = await searchService.search({ params });
-        break;
-      case "videos":
-        params = {
-          media_type: "video",
-          page: 1,
-        };
-        response = await searchService.search({ params });
-        break;
-      default:
-        throw new Error("invalid Type");
+    if (search) {
+      params = {
+        q: search,
+        media_type: gallery,
+        page: page,
+      };
+      response = await searchService.search({ params });
+    } else {
+      params = {
+        media_type: gallery,
+        page: page,
+      };
+      response = await searchService.search({ params });
     }
     setlistItem(response.data.collection.items);
   };
 
+  //page
+  const handlePageChange = (newPage) => {
+    setPage(newPage);
+  };
+  useEffect(() => {
+    setPage(1);
+  }, [gallery]);
+
   useEffect(() => {
     fetchList();
-  }, [gallery]);
+  }, [gallery, page]);
   return (
     <div>
       <div className={cx("astro-list")}>
         {listItem.map((item, i) => (
-          <AstroItem key={i} item={item} gallery={gallery}/>
+          <AstroItem key={i} item={item} gallery={gallery} />
         ))}
       </div>
+
+      <Pagination
+        totalPages={totalPages}
+        page={page}
+        onChangePage={handlePageChange}
+        gallery={gallery}
+      />
     </div>
   );
 }

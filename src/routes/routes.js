@@ -6,7 +6,7 @@ const { default: Home } = require("~/pages/Home");
 
 const publicRoutes = [
   { path: "/", component: Home },
-  { path: "/search/:search", component: Search },
+  { path: "/search/:gallery/:search", component: Search },
   { path: "/:gallery", component: Gallery },
   { path: "/contents/:gallery/:id", component: Detail },
 ];

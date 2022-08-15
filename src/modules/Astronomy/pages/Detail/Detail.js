@@ -20,7 +20,6 @@ function Detail() {
     };
     const response = await searchService.search({ params });
     setItem(response.data.collection.items[0]);
-    console.log(response.data.collection.items[0]);
   };
 
   const fetchVideo = async () => {
@@ -43,7 +42,7 @@ function Detail() {
         <div className="container">
           <div className={cx("detail")}>
             <div className={cx("image")}>
-              {gallery == "images" ? (
+              {gallery == "image" ? (
                 <img src={item.links[0].href} alt="" />
               ) : (
                 <div>

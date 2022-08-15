@@ -12,11 +12,9 @@ function Home() {
 
   useEffect(() => {
     const fetchImagesOfDay = async () => {
-      const params = {
-      }
+      const params = {};
       const response = await imageService.images({ params });
       setImageOfDay(response);
-      console.log(response)
     };
     fetchImagesOfDay();
   }, []);
@@ -28,9 +26,13 @@ function Home() {
       <div className="container">
         <div className={cx("content")}>
           <div className={cx("section")}>
-            <div className={cx("title")}>Image of the day</div>
-            <img src={imageOfDay.url} alt="Image Of Day"/>
+            <h2 className={cx("title")}>Image of the day</h2>
+            <div className={cx("image")}>
+              <img src={imageOfDay.url} alt="Image Of Day" />
+            </div>
           </div>
+
+          
         </div>
       </div>
     </div>

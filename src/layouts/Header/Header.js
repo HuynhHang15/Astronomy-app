@@ -14,11 +14,11 @@ const headerNav = [
   },
   {
     display: "Images",
-    path: "/images",
+    path: "/image",
   },
   {
     display: "Videos",
-    path: "/videos",
+    path: "/video",
   },
 ];
 
