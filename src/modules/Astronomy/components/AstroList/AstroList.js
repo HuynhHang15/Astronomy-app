@@ -13,7 +13,7 @@ function AstroList({ gallery, search }) {
   const [listItem, setlistItem] = useState([]);
 
   const [page, setPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1000);
+  const [totalPages, setTotalPages] = useState(100);
 
   const fetchList = async () => {
     let params = {};

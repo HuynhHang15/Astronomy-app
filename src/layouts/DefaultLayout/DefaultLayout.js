@@ -3,6 +3,7 @@ import style from "./DefaultLayout.module.scss";
 
 import Header from "~/layouts/Header";
 import Footer from "~/layouts/Footer";
+import ScrollToTop from "~/layouts/ScrollToTop";
 
 const cx = classNames.bind(style)
 
@@ -13,6 +14,7 @@ function DefaultLayout({ children }) {
       
       <div>{children}</div>
 
+      <ScrollToTop/>
       <Footer/>
     </div>
   );
