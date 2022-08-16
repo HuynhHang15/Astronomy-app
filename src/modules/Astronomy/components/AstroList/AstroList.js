@@ -54,12 +54,12 @@ function AstroList({ gallery, search }) {
         ))}
       </div>
 
-      <Pagination
+      {/* <Pagination
         totalPages={totalPages}
         page={page}
         onChangePage={handlePageChange}
         gallery={gallery}
-      />
+      /> */}
     </div>
   );
 }
