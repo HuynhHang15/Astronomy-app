@@ -2,7 +2,7 @@ import classNames from "classnames/bind";
 import style from "./Home.module.scss";
 
 import Hero from "~/modules/Astronomy/components/Hero";
-import ImageDay from "~/modules/Astronomy/components/ImageDay";
+import ImageDay from "~/modules/Astronomy/components/ImageDayPre";
 
 const cx = classNames.bind(style);
 
