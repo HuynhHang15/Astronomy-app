@@ -39,6 +39,20 @@ body{
   position: relative;
 }
 
+//ScrollBar CSS
+html *::-webkit-scrollbar {
+  border-radius: 0;
+  width: 8px;
+}
+html *::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: var(--gray-color);
+}
+html *::-webkit-scrollbar-track {
+  border-radius: 0;
+  background-color: var(--background-color2);
+}
+
 button, input, [tabindex]{
   font-family: "Poppins", sans-serif;
   outline: none;
