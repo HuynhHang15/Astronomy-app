@@ -1,0 +1,23 @@
+.image-of-day{
+    margin-top: 100px;
+    min-height: 100vh;
+    background: auto auto no-repeat;
+}
+.list-item{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+.loadMore{
+    padding: 10px;
+    width: 100%;
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hide{
+    display: none;
+}
