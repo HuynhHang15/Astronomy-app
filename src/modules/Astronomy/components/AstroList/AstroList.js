@@ -11,9 +11,10 @@ const cx = classNames.bind(style);
 
 function AstroList({ gallery, search }) {
   const [listItem, setlistItem] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const [page, setPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(100);
+  const [totalPages, setTotalPages] = useState(50);
 
   const fetchList = async () => {
     let params = {};
@@ -33,6 +34,7 @@ function AstroList({ gallery, search }) {
       response = await searchService.search({ params });
     }
     setlistItem(response.data.collection.items);
+    setLoading(false);
   };
 
   //page
@@ -44,6 +46,7 @@ function AstroList({ gallery, search }) {
   }, [gallery]);
 
   useEffect(() => {
+    setLoading(true);
     fetchList();
   }, [gallery, page]);
   return (

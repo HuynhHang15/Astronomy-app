@@ -22,7 +22,6 @@ function ImagePreview({ image, title, description }) {
         <div className={cx("gallery-image")}>
           <img src={image} alt="" onClick={() => setShow(true)} />
         </div>
-        <div className={cx("title")}>{title}</div>
       </div>
 
       <div
@@ -30,12 +29,16 @@ function ImagePreview({ image, title, description }) {
         onClick={handleClose}
       >
         <div className={cx("modal-content")}>
-          <div>
-            <img src={image} />
-            <div className={cx("title")}>{title}</div>
+          <div className={cx("modal-image")}>
+            <img className={cx("img")} src={image} alt={title} />
           </div>
+          <div className={cx("title")}>{title}</div>
+
           <div className={cx("desc")}>{description}</div>
-          <button onClick={() => setShow(false)}><FontAwesomeIcon icon={faClose}/></button>
+          
+          <button onClick={() => setShow(false)}>
+            <FontAwesomeIcon icon={faClose} />
+          </button>
         </div>
       </div>
     </div>

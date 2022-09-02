@@ -25,11 +25,7 @@ function ImageOfDay() {
       start_date: "2022-08-01",
     };
     const response = await imageService.images({ params });
-    const images = response.map((i) => {
-      if (i.media_type === "image") return i;
-    });
-    console.log(images);
-    setImageOfDays(images.reverse());
+    setImageOfDays(response.reverse());
     setLoadMore(true);
     setLoading(false);
   };
@@ -52,14 +48,17 @@ function ImageOfDay() {
             {imageOfDays &&
               imageOfDays
                 .slice(0, visible)
-                .map((item, i) => (
-                  <ImageCard
-                    key={i}
-                    image={item.url}
-                    title={item.title}
-                    description={item.explanation}
-                  />
-                ))}
+                .map(
+                  (item, i) =>
+                    item.url.includes("jpg") && (
+                      <ImageCard
+                        key={i}
+                        image={item.url}
+                        title={item.title}
+                        description={item.explanation}
+                      />
+                    )
+                )}
           </div>
 
           <button

@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import * as searchService from "~/service/searchService";
 import axios from "axios";
 import { replaceSpace } from "~/utils/replaceSpace";
+import Loading from "~/components/Loading";
 
 const cx = classNames.bind(style);
 
@@ -13,6 +14,7 @@ function Detail() {
   const { gallery, id } = useParams();
   const [item, setItem] = useState({});
   const [video, setVideo] = useState(null);
+  const [loading, setLoading] = useState(true)
 
   const fetchItem = async () => {
     const params = {
@@ -20,6 +22,7 @@ function Detail() {
     };
     const response = await searchService.search({ params });
     setItem(response.data.collection.items[0]);
+    setLoading(false);
   };
 
   const fetchVideo = async () => {
@@ -27,17 +30,21 @@ function Detail() {
       const url = replaceSpace(item.href);
       const response = await axios.get(url);
       setVideo(response.data[0]);
+      setLoading(false);
     }
   };
 
   useEffect(() => {
+    setLoading(true)
     fetchItem();
     if (gallery == "videos") {
       fetchVideo();
     }
+    
   }, [gallery, id]);
   return (
     <div>
+      {loading && <Loading/>}
       {item.data && (
         <div className="container">
           <div className={cx("detail")}>
