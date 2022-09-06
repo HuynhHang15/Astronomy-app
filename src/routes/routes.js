@@ -6,7 +6,7 @@ import Search from "~/pages/Search";
 const { default: Home } = require("~/pages/Home");
 
 const publicRoutes = [
-  { path: "/", component: Home },
+  { path: "/Astronomy-app/", component: Home },
   { path: "/image-of-day", component: ImageOfDay },
   { path: "/:gallery", component: Gallery },
   { path: "/search/:gallery/:search", component: Search },
