@@ -75,7 +75,10 @@
   }
   .modal .desc{
     margin: 20px 40px;
-    text-align: left;
+    text-align: justify;
+    background: #1e1f26;
+    padding: 10px;
+    border-radius: 5px;
   }
   .modal button{
     position: absolute;
@@ -93,4 +96,15 @@
   
   .hide{
     display: none;
+  }
+
+  @media screen and (max-width: 767px){
+    .modal-content{
+      max-height: 80vh;
+      max-width: 90vw;
+      padding: 0px;
+    }
+    .modal .desc{
+      margin: 20px 10px;
+    }
   }

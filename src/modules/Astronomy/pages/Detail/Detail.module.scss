@@ -8,11 +8,23 @@
             max-width: 600px;
         }
     }
+    .video{
+        width: 600px;
+        background: gray;
+        video{
+            width: 100%;
+        }
+    }
     .title{
         max-width: 500px;
         word-wrap: break-word;
         margin: 20px auto;
         text-align: center;
+    }
+    .content{
+        background: #1e1f26;
+        padding: 10px;
+        border-radius: 5px;
     }
     h3{
         margin-top: 20px;

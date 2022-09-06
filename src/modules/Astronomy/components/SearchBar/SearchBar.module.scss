@@ -41,3 +41,23 @@
     padding-right: 10px;
     color: inherit;
 }
+
+@media screen and (max-width: 1024px ){
+    .search{
+        width: 550px;
+        height: 50px;
+    }
+}
+
+@media screen and (max-width: 767px ){
+    .search{
+        width: 350px;
+        height: 40px;
+    }
+    .icon-search{
+        font-size: 16px;
+    }
+    .input-search{
+        font-size: 14px;
+    }
+}

@@ -44,6 +44,7 @@ function ImageOfDay() {
         style={{ backgroundImage: `url(${background})` }}
       >
         <div className="container">
+          <h2>IMAGE OF DAY</h2>
           <div className={cx("list-item")}>
             {imageOfDays &&
               imageOfDays

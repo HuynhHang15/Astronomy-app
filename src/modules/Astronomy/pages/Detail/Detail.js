@@ -2,7 +2,7 @@ import classNames from "classnames/bind";
 import style from "./Detail.module.scss";
 
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import * as searchService from "~/service/searchService";
 import axios from "axios";
 import { replaceSpace } from "~/utils/replaceSpace";
@@ -14,7 +14,7 @@ function Detail() {
   const { gallery, id } = useParams();
   const [item, setItem] = useState({});
   const [video, setVideo] = useState(null);
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
 
   const fetchItem = async () => {
     const params = {
@@ -26,7 +26,7 @@ function Detail() {
   };
 
   const fetchVideo = async () => {
-    if (item.href) {
+    if (gallery == "video" && item.href) {
       const url = replaceSpace(item.href);
       const response = await axios.get(url);
       setVideo(response.data[0]);
@@ -35,16 +35,18 @@ function Detail() {
   };
 
   useEffect(() => {
-    setLoading(true)
+    setLoading(true);
     fetchItem();
-    if (gallery == "videos") {
+  }, [gallery, id]);
+
+  useEffect(() => {
+    if (gallery == "video") {
       fetchVideo();
     }
-    
-  }, [gallery, id]);
+  }, [item]);
   return (
     <div>
-      {loading && <Loading/>}
+      {loading && <Loading />}
       {item.data && (
         <div className="container">
           <div className={cx("detail")}>
@@ -54,16 +56,18 @@ function Detail() {
               ) : (
                 <div>
                   {video && (
-                    <video controls>
-                      <source src={replaceSpace(video)} />
-                    </video>
+                    <div className={cx("video")}>
+                      <video controls>
+                        <source src={replaceSpace(video)} />
+                      </video>
+                    </div>
                   )}
                 </div>
               )}
             </div>
-            <div className="content">
-              <h2 className={cx("title")}>{item.data[0].title}</h2>
-              <div className={cx("date")}>{item.data[0].date_created}</div>
+            <h2 className={cx("title")}>{item.data[0].title}</h2>
+            <div className={cx("date")}>{item.data[0].date_created}</div>
+            <div className={cx("content")}>
               <div className="overview">
                 <h3>Overview</h3>
                 <div className={cx("description")}>
@@ -79,9 +83,11 @@ function Detail() {
               <div className={cx("keywords")}>
                 <h3>Keywords</h3>
                 {item.data[0].keywords.map((item, i) => (
-                  <span className={cx("keyword")} key={i}>
-                    {item}
-                  </span>
+                  <Link to={`/search/${gallery}/${item}`}>
+                    <span className={cx("keyword")} key={i}>
+                      {item}
+                    </span>
+                  </Link>
                 ))}
               </div>
             </div>

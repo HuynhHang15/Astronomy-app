@@ -36,3 +36,15 @@
 .item-image:nth-child(6){
     grid-column: 3/5;
 }
+
+@media screen and (max-width: 1024px ){
+    .images{
+        grid-template-rows: 200px 50px 200px;
+    }
+}
+
+@media screen and (max-width: 767px ){
+    .images{
+        grid-template-rows: 100px 50px 100px;
+    }
+}
