@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Astronomy-app/static/css/main.a9657e63.css",
-    "main.js": "/Astronomy-app/static/js/main.55411d91.js",
+    "main.js": "/Astronomy-app/static/js/main.b52f4248.js",
     "static/media/Earth_Background.mp4": "/Astronomy-app/static/media/Earth_Background.db5a6b2ac08dab7e7e6f.mp4",
     "static/media/image_footer.jpg": "/Astronomy-app/static/media/image_footer.a6123643ed6110f1c733.jpg",
     "static/media/image_header.jpg": "/Astronomy-app/static/media/image_header.75cd6c3ac827a1550805.jpg",
@@ -9,10 +9,10 @@
     "static/media/NASA_logo.png": "/Astronomy-app/static/media/NASA_logo.e9895fc2d216d92251bb.png",
     "index.html": "/Astronomy-app/index.html",
     "main.a9657e63.css.map": "/Astronomy-app/static/css/main.a9657e63.css.map",
-    "main.55411d91.js.map": "/Astronomy-app/static/js/main.55411d91.js.map"
+    "main.b52f4248.js.map": "/Astronomy-app/static/js/main.b52f4248.js.map"
   },
   "entrypoints": [
     "static/css/main.a9657e63.css",
-    "static/js/main.55411d91.js"
+    "static/js/main.b52f4248.js"
   ]
 }
