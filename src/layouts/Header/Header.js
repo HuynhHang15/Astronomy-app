@@ -10,7 +10,7 @@ const cx = classNames.bind(style);
 const headerNav = [
   {
     display: "Home",
-    path: "/",
+    path: "/Astronomy-app",
   },
   {
     display: "Images",
@@ -45,9 +45,9 @@ function Header() {
   return (
     <div ref={headerRef} className={cx("header")}>
       <div className={cx("container")}>
-        <div className={cx("header-logo")}>
+        <Link to="/Astronomy-app" className={cx("header-logo")}>
           <img src={logoImg} alt="logo" />
-        </div>
+        </Link>
         <ul className={cx("header-nav")}>
           {headerNav.map((e, i) => (
             <Link to={e.path} key={i}>
