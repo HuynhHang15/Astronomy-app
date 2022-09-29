@@ -10,7 +10,7 @@ const cx = classNames.bind(style);
 
 function Search() {
   const { gallery, search } = useParams();
-  
+  ///sdhvisid
   return (
     <div>
       <div className={cx("gallery")}>
