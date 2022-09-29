@@ -7,10 +7,11 @@ import * as imageService from "~/service/imagesService";
 import ImageCard from "~/modules/Astronomy/components/ImageCard";
 import Loading from "~/components/Loading";
 import background from "~/asset/images/background.jpg";
+import axios from "axios";
 
 const cx = classNames.bind(style);
 
-function ImageOfDay() {
+function ImageOfDay({type, title}) {
   const [imageOfDays, setImageOfDays] = useState([]);
   const [loadMore, setLoadMore] = useState(false);
   const [visible, setVisible] = useState(12);
@@ -21,13 +22,24 @@ function ImageOfDay() {
   };
 
   const fetchImagesOfDays = async () => {
-    const params = {
-      start_date: "2022-08-01",
-    };
-    const response = await imageService.images({ params });
-    setImageOfDays(response.reverse());
-    setLoadMore(true);
-    setLoading(false);
+    let params= {};
+    let response = null;
+    switch (type) {
+      case "popular":
+        const url = "https://images-assets.nasa.gov/popular.json";
+        response = await axios.get(url);
+        break;
+    
+      default:
+        params = {
+          start_date: "2022-08-01",
+        };
+        response = await imageService.images({ params });
+        setImageOfDays(response.reverse());
+        setLoadMore(true);
+        setLoading(false);
+        break;
+    }
   };
 
   useEffect(() => {
