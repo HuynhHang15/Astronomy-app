@@ -18,6 +18,7 @@ function Search() {
           <img src={imageHeader} alt="" />
           <h2>Result for "{search}"</h2>
         </div>
+        
         <div className="container">
           <AstroList gallery={gallery} search={search} />
         </div>
