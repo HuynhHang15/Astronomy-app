@@ -10,7 +10,7 @@ const cx = classNames.bind(style);
 const headerNav = [
   {
     display: "Home",
-    path: "/Astronomy-app",
+    path: "/",
   },
   {
     display: "Images",
